@@ -1,0 +1,1694 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/29/2023 5:10:23 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-NBTGOJS"
+  DTS:CreatorName="DESKTOP-NBTGOJS\blitz"
+  DTS:DTSID="{AE560846-3915-46C2-B5A8-F37F3248EF9E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="14345"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{12697730-2635-4384-AE17-1472775F57D3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EA0E0993-A080-4D66-B6B3-7AFA1BFD033A}"
+      DTS:ObjectName="DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NBTGOJS\SQLEXPRESS;Initial Catalog=CustomerDataHistory;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{EA0E0993-A080-4D66-B6B3-7AFA1BFD033A}DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E25D8531-E572-4681-92C4-F19999224EFF}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="14345"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\DEV\Data Engineering\BTPN Syariah VIX\Final Project\cc-churn-analysis\data\raw\customer_data_history.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CLIENTNUM"
+              DTS:DTSID="{2DDB9076-B21A-4472-95FF-314FDC4BC925}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idstatus"
+              DTS:DTSID="{349DFC56-F07F-4A0E-84C4-748281CDFA21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer_Age"
+              DTS:DTSID="{41A30997-8051-44DB-8896-4990190B3795}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{A74BA54E-9061-44DE-92DD-7C0EFE72C6F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dependent_count"
+              DTS:DTSID="{B3C76F13-AB92-4BEA-B999-B5D53BD2511A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Educationid"
+              DTS:DTSID="{40E4613B-CBDF-482B-8F4A-BC4276D09562}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Maritalid"
+              DTS:DTSID="{6410ABD9-DB9F-4F97-92C6-AA19A79A417F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Income_Category"
+              DTS:DTSID="{341431CC-576D-4413-B99A-F932A896EDCB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="card_categoryid"
+              DTS:DTSID="{A0BD3093-0B67-40DD-ABD5-641DB18B1A5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Months_on_book"
+              DTS:DTSID="{E7FFC630-CFE3-4B3D-A6DD-1526C869FE14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Relationship_Count"
+              DTS:DTSID="{C7D423B7-FFD7-434C-B026-6FEC2A3F27C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Months_Inactive_12_mon"
+              DTS:DTSID="{EEE63F37-891A-4C58-B600-165BA300AE15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contacts_Count_12_mon"
+              DTS:DTSID="{2177CEFF-6C5E-4E2E-93CB-603B45A5DF10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Credit_Limit"
+              DTS:DTSID="{8CC349C6-8D87-4C97-AFA9-9AA46518DCCC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Revolving_Bal"
+              DTS:DTSID="{997507B0-1867-47D5-97DA-4B49756EA025}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Avg_Open_To_Buy"
+              DTS:DTSID="{A7CBC56C-CC72-4477-9E3B-5D3A77C4B206}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Trans_Amt"
+              DTS:DTSID="{A6CE1CC4-D7DE-4B85-A339-E6B468257DE2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Trans_Ct"
+              DTS:DTSID="{BB6E9C3E-DD97-4215-8BDC-D5E3B17423C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Avg_Utilization_Ratio"
+              DTS:DTSID="{395A70D2-0E99-42CA-84A3-74641ED83037}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CDH Staging Pipeline"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D7243BCD-66C6-467B-9091-75B30C904961}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDH Staging Pipeline"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CDH Staging Pipeline\CDH Staging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="CDH Staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CDHStaging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CDH Staging Pipeline\CDH Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[idstatus]"
+                      cachedDataType="i4"
+                      cachedName="idstatus"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[StatusKey]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[idstatus]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Customer_Age]"
+                      cachedDataType="i4"
+                      cachedName="Customer_Age"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[CustomerAge]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Customer_Age]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Dependent_count]"
+                      cachedDataType="i4"
+                      cachedName="Dependent_count"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[DependentCount]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Dependent_count]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Educationid]"
+                      cachedDataType="i4"
+                      cachedName="Educationid"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[EducationKey]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Educationid]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Maritalid]"
+                      cachedDataType="i4"
+                      cachedName="Maritalid"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[MaritalKey]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Maritalid]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Income_Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Income_Category"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[IncomeCategory]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Income_Category]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[card_categoryid]"
+                      cachedDataType="i4"
+                      cachedName="card_categoryid"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[CategoryKey]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[card_categoryid]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Months_on_book]"
+                      cachedDataType="i4"
+                      cachedName="Months_on_book"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[MonthsOnBook]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_on_book]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Months_Inactive_12_mon]"
+                      cachedDataType="i4"
+                      cachedName="Months_Inactive_12_mon"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[MonthsInactive12Mon]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_Inactive_12_mon]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Contacts_Count_12_mon]"
+                      cachedDataType="i4"
+                      cachedName="Contacts_Count_12_mon"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[ContactsCount12Mon]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Contacts_Count_12_mon]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Credit_Limit]"
+                      cachedDataType="r8"
+                      cachedName="Credit_Limit"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[CreditLimit]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Credit_Limit]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Total_Revolving_Bal]"
+                      cachedDataType="i4"
+                      cachedName="Total_Revolving_Bal"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[TotalRevolvingBal]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Revolving_Bal]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Avg_Open_To_Buy]"
+                      cachedDataType="r8"
+                      cachedName="Avg_Open_To_Buy"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[AvgOpenToBuy]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Open_To_Buy]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Total_Trans_Amt]"
+                      cachedDataType="i4"
+                      cachedName="Total_Trans_Amt"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[TotalTransAmt]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Amt]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Total_Trans_Ct]"
+                      cachedDataType="i4"
+                      cachedName="Total_Trans_Ct"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[TotalTransCt]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Ct]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Avg_Utilization_Ratio]"
+                      cachedDataType="r8"
+                      cachedName="Avg_Utilization_Ratio"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[AvgUtilization]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Utilization_Ratio]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[Total_Relationship_Count]"
+                      cachedDataType="i4"
+                      cachedName="Total_Relationship_Count"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[TotalRelationshipCount]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Relationship_Count]" />
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].Columns[CLIENTNUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLIENTNUM"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[ClientKey]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[CLIENTNUM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[StatusKey]"
+                      dataType="i4"
+                      name="StatusKey" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[CustomerAge]"
+                      dataType="i4"
+                      name="CustomerAge" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[DependentCount]"
+                      dataType="i4"
+                      name="DependentCount" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[EducationKey]"
+                      dataType="i4"
+                      name="EducationKey" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[MaritalKey]"
+                      dataType="i4"
+                      name="MaritalKey" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[IncomeCategory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="IncomeCategory" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[CategoryKey]"
+                      dataType="i4"
+                      name="CategoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[MonthsOnBook]"
+                      dataType="i4"
+                      name="MonthsOnBook" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[TotalRelationshipCount]"
+                      dataType="i4"
+                      name="TotalRelationshipCount" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[MonthsInactive12Mon]"
+                      dataType="i4"
+                      name="MonthsInactive12Mon" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[ContactsCount12Mon]"
+                      dataType="i4"
+                      name="ContactsCount12Mon" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[CreditLimit]"
+                      dataType="r8"
+                      name="CreditLimit" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[TotalRevolvingBal]"
+                      dataType="i4"
+                      name="TotalRevolvingBal" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[AvgOpenToBuy]"
+                      dataType="r8"
+                      name="AvgOpenToBuy" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[TotalTransAmt]"
+                      dataType="i4"
+                      name="TotalTransAmt" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[TotalTransCt]"
+                      dataType="i4"
+                      name="TotalTransCt" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[AvgUtilization]"
+                      dataType="r8"
+                      name="AvgUtilization" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input].ExternalColumns[ClientKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ClientKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CDH Staging Pipeline\CDH Staging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CDH Staging Pipeline\CDH Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\CDH Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CDH Staging Pipeline\CDH Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CDH Staging Pipeline\Column Name Standardization"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Column Name Standardization"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[ClientID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLIENTNUM"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[CLIENTNUM]"
+                      name="ClientID"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[CLIENTNUM]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ClientID</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[StatusKey]"
+                      cachedDataType="i4"
+                      cachedName="idstatus"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[idstatus]"
+                      name="StatusKey"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[idstatus]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">StatusKey</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[CustomerAge]"
+                      cachedDataType="i4"
+                      cachedName="Customer_Age"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Customer_Age]"
+                      name="CustomerAge"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Customer_Age]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">CustomerAge</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Gender]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Gender]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Gender</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[DependentCount]"
+                      cachedDataType="i4"
+                      cachedName="Dependent_count"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Dependent_count]"
+                      name="DependentCount"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Dependent_count]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DependentCount</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[EducationKey]"
+                      cachedDataType="i4"
+                      cachedName="Educationid"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Educationid]"
+                      name="EducationKey"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Educationid]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">EducationKey</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[MaritalKey]"
+                      cachedDataType="i4"
+                      cachedName="Maritalid"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Maritalid]"
+                      name="MaritalKey"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Maritalid]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">MaritalKey</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[IncomeCategory]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Income_Category"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Income_Category]"
+                      name="IncomeCategory"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Income_Category]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">IncomeCategory</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[CategoryKey]"
+                      cachedDataType="i4"
+                      cachedName="card_categoryid"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[card_categoryid]"
+                      name="CategoryKey"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[card_categoryid]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">CategoryKey</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[MonthsOnBook]"
+                      cachedDataType="i4"
+                      cachedName="Months_on_book"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_on_book]"
+                      name="MonthsOnBook"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_on_book]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">MonthsOnBook</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[TotaRelationshipCount]"
+                      cachedDataType="i4"
+                      cachedName="Total_Relationship_Count"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Relationship_Count]"
+                      name="TotaRelationshipCount"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Relationship_Count]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TotaRelationshipCount</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[MonthsInactive12Mon]"
+                      cachedDataType="i4"
+                      cachedName="Months_Inactive_12_mon"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_Inactive_12_mon]"
+                      name="MonthsInactive12Mon"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_Inactive_12_mon]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">MonthsInactive12Mon</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[ContactsCount12Mon]"
+                      cachedDataType="i4"
+                      cachedName="Contacts_Count_12_mon"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Contacts_Count_12_mon]"
+                      name="ContactsCount12Mon"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Contacts_Count_12_mon]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ContactsCount12Mon</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[CreditLimit]"
+                      cachedDataType="r8"
+                      cachedName="Credit_Limit"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Credit_Limit]"
+                      name="CreditLimit"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Credit_Limit]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">CreditLimit</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[TotalRevolvingBal]"
+                      cachedDataType="i4"
+                      cachedName="Total_Revolving_Bal"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Revolving_Bal]"
+                      name="TotalRevolvingBal"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Revolving_Bal]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TotalRevolvingBal</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[AvgOpenToBuy]"
+                      cachedDataType="r8"
+                      cachedName="Avg_Open_To_Buy"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Open_To_Buy]"
+                      name="AvgOpenToBuy"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Open_To_Buy]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">AvgOpenToBuy</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[TotalTransAmt]"
+                      cachedDataType="i4"
+                      cachedName="Total_Trans_Amt"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Amt]"
+                      name="TotalTransAmt"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Amt]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TotalTransAmt</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[TotalTransCt]"
+                      cachedDataType="i4"
+                      cachedName="Total_Trans_Ct"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Ct]"
+                      name="TotalTransCt"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Ct]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TotalTransCt</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input].Columns[AvgUtilizationRatio]"
+                      cachedDataType="r8"
+                      cachedName="Avg_Utilization_Ratio"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Utilization_Ratio]"
+                      name="AvgUtilizationRatio"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Utilization_Ratio]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">AvgUtilizationRatio</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CDH Staging Pipeline\Column Name Standardization.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CDH Staging Pipeline\Column Name Standardization.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CDH Staging Pipeline\Column Name Standardization.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Column Name Standardization.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CDH Staging Pipeline\Column Name Standardization.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CDH Staging Pipeline\Customer Data History CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="14345"
+              name="Customer Data History CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CDH Staging Pipeline\Customer Data History CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[CLIENTNUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[CLIENTNUM]"
+                      length="50"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[CLIENTNUM]"
+                      name="CLIENTNUM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[idstatus]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[idstatus]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[idstatus]"
+                      name="idstatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Customer_Age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Customer_Age]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Customer_Age]"
+                      name="Customer_Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Dependent_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Dependent_count]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Dependent_count]"
+                      name="Dependent_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Educationid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Educationid]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Educationid]"
+                      name="Educationid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Maritalid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Maritalid]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Maritalid]"
+                      name="Maritalid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Income_Category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Income_Category]"
+                      length="100"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Income_Category]"
+                      name="Income_Category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[card_categoryid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[card_categoryid]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[card_categoryid]"
+                      name="card_categoryid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_on_book]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Months_on_book]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_on_book]"
+                      name="Months_on_book"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Relationship_Count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Total_Relationship_Count]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Relationship_Count]"
+                      name="Total_Relationship_Count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_Inactive_12_mon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Months_Inactive_12_mon]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Months_Inactive_12_mon]"
+                      name="Months_Inactive_12_mon"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Contacts_Count_12_mon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Contacts_Count_12_mon]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Contacts_Count_12_mon]"
+                      name="Contacts_Count_12_mon"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Credit_Limit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Credit_Limit]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Credit_Limit]"
+                      name="Credit_Limit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Revolving_Bal]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Total_Revolving_Bal]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Revolving_Bal]"
+                      name="Total_Revolving_Bal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Open_To_Buy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Avg_Open_To_Buy]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Open_To_Buy]"
+                      name="Avg_Open_To_Buy"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Amt]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Total_Trans_Amt]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Amt]"
+                      name="Total_Trans_Amt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Ct]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Total_Trans_Ct]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Total_Trans_Ct]"
+                      name="Total_Trans_Ct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Utilization_Ratio]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Avg_Utilization_Ratio]"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].Columns[Avg_Utilization_Ratio]"
+                      name="Avg_Utilization_Ratio"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[CLIENTNUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLIENTNUM" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[idstatus]"
+                      dataType="i4"
+                      name="idstatus" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Customer_Age]"
+                      dataType="i4"
+                      name="Customer_Age" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Dependent_count]"
+                      dataType="i4"
+                      name="Dependent_count" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Educationid]"
+                      dataType="i4"
+                      name="Educationid" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Maritalid]"
+                      dataType="i4"
+                      name="Maritalid" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Income_Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Income_Category" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[card_categoryid]"
+                      dataType="i4"
+                      name="card_categoryid" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Months_on_book]"
+                      dataType="i4"
+                      name="Months_on_book" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Total_Relationship_Count]"
+                      dataType="i4"
+                      name="Total_Relationship_Count" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Months_Inactive_12_mon]"
+                      dataType="i4"
+                      name="Months_Inactive_12_mon" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Contacts_Count_12_mon]"
+                      dataType="i4"
+                      name="Contacts_Count_12_mon" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Credit_Limit]"
+                      dataType="r8"
+                      name="Credit_Limit" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Total_Revolving_Bal]"
+                      dataType="i4"
+                      name="Total_Revolving_Bal" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Avg_Open_To_Buy]"
+                      dataType="r8"
+                      name="Avg_Open_To_Buy" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Total_Trans_Amt]"
+                      dataType="i4"
+                      name="Total_Trans_Amt" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Total_Trans_Ct]"
+                      dataType="i4"
+                      name="Total_Trans_Ct" />
+                    <externalMetadataColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output].ExternalColumns[Avg_Utilization_Ratio]"
+                      dataType="r8"
+                      name="Avg_Utilization_Ratio" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CDH Staging Pipeline.Paths[Derived Column Output]"
+              endId="Package\CDH Staging Pipeline\CDH Staging.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\CDH Staging Pipeline\Column Name Standardization.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\CDH Staging Pipeline.Paths[Flat File Source Output]"
+              endId="Package\CDH Staging Pipeline\Column Name Standardization.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\CDH Staging Pipeline\Customer Data History CSV.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\CDH Staging Pipeline"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CDH Staging Pipeline">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\CDH Staging Pipeline\Customer Data History CSV"
+          TopLeft="65.5,65.5" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\CDH Staging Pipeline\Column Name Standardization"
+          TopLeft="60.5,147.5" />
+        <EdgeLayout
+          Id="Package\CDH Staging Pipeline.Paths[Flat File Source Output]"
+          TopLeft="174.25,107.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="143,42"
+          Id="Package\CDH Staging Pipeline\CDH Staging"
+          TopLeft="100.5,242.5" />
+        <EdgeLayout
+          Id="Package\CDH Staging Pipeline.Paths[Derived Column Output]"
+          TopLeft="173.5,189.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Standarize column's naming convention before loading to staging"
+          ParentId="Package\CDH Staging Pipeline"
+          FontInfo="{assembly:Null}"
+          Size="378,60"
+          Id="b2b9a668-d5ab-41d9-87fc-f482450b8b8c"
+          TopLeft="320,146" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CDH Staging Pipeline\CDH Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

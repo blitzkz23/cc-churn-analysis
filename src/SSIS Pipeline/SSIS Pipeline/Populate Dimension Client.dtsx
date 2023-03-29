@@ -1,0 +1,797 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/29/2023 6:09:19 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-NBTGOJS"
+  DTS:CreatorName="DESKTOP-NBTGOJS\blitz"
+  DTS:DTSID="{50041CCC-1D09-465D-8F8B-404BD2AA1B71}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="14345"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{7E484FF1-24B1-40F8-9C01-4794917D3A86}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BFB14F12-65DA-4534-A0DF-C18362EE924A}"
+      DTS:ObjectName="DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-NBTGOJS\SQLEXPRESS;Initial Catalog=CustomerDataHistory;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{BFB14F12-65DA-4534-A0DF-C18362EE924A}DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Populate Dimension Client"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6FCF479E-1A73-4498-A3CF-DEAE1A360D30}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Dimension Client"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate Dimension Client\CDH Staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="CDH Staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CDHStaging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimension Client\CDH Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[ClientKey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[ClientKey]"
+                      length="50"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[ClientKey]"
+                      name="ClientKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[StatusKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[StatusKey]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[StatusKey]"
+                      name="StatusKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[CustomerAge]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[CustomerAge]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[CustomerAge]"
+                      name="CustomerAge"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[DependentCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[DependentCount]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[DependentCount]"
+                      name="DependentCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[EducationKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[EducationKey]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[EducationKey]"
+                      name="EducationKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[MaritalKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[MaritalKey]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[MaritalKey]"
+                      name="MaritalKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[IncomeCategory]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[IncomeCategory]"
+                      length="100"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[IncomeCategory]"
+                      name="IncomeCategory"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[CategoryKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[CategoryKey]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[CategoryKey]"
+                      name="CategoryKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[MonthsOnBook]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[MonthsOnBook]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[MonthsOnBook]"
+                      name="MonthsOnBook"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[TotalRelationshipCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[TotalRelationshipCount]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[TotalRelationshipCount]"
+                      name="TotalRelationshipCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[MonthsInactive12Mon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[MonthsInactive12Mon]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[MonthsInactive12Mon]"
+                      name="MonthsInactive12Mon"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[ContactsCount12Mon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[ContactsCount12Mon]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[ContactsCount12Mon]"
+                      name="ContactsCount12Mon"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[CreditLimit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[CreditLimit]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[CreditLimit]"
+                      name="CreditLimit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[TotalRevolvingBal]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[TotalRevolvingBal]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[TotalRevolvingBal]"
+                      name="TotalRevolvingBal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[AvgOpenToBuy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[AvgOpenToBuy]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[AvgOpenToBuy]"
+                      name="AvgOpenToBuy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[TotalTransAmt]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[TotalTransAmt]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[TotalTransAmt]"
+                      name="TotalTransAmt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[TotalTransCt]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[TotalTransCt]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[TotalTransCt]"
+                      name="TotalTransCt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[AvgUtilization]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[AvgUtilization]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[AvgUtilization]"
+                      name="AvgUtilization"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[ClientKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ClientKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[StatusKey]"
+                      dataType="i4"
+                      name="StatusKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[CustomerAge]"
+                      dataType="i4"
+                      name="CustomerAge" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[DependentCount]"
+                      dataType="i4"
+                      name="DependentCount" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[EducationKey]"
+                      dataType="i4"
+                      name="EducationKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[MaritalKey]"
+                      dataType="i4"
+                      name="MaritalKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[IncomeCategory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="IncomeCategory" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[CategoryKey]"
+                      dataType="i4"
+                      name="CategoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[MonthsOnBook]"
+                      dataType="i4"
+                      name="MonthsOnBook" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[TotalRelationshipCount]"
+                      dataType="i4"
+                      name="TotalRelationshipCount" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[MonthsInactive12Mon]"
+                      dataType="i4"
+                      name="MonthsInactive12Mon" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[ContactsCount12Mon]"
+                      dataType="i4"
+                      name="ContactsCount12Mon" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[CreditLimit]"
+                      dataType="r8"
+                      name="CreditLimit" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[TotalRevolvingBal]"
+                      dataType="i4"
+                      name="TotalRevolvingBal" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[AvgOpenToBuy]"
+                      dataType="r8"
+                      name="AvgOpenToBuy" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[TotalTransAmt]"
+                      dataType="i4"
+                      name="TotalTransAmt" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[TotalTransCt]"
+                      dataType="i4"
+                      name="TotalTransCt" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].ExternalColumns[AvgUtilization]"
+                      dataType="r8"
+                      name="AvgUtilization" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[ClientKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[ClientKey]"
+                      name="ClientKey" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[StatusKey]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[StatusKey]"
+                      name="StatusKey" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[CustomerAge]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[CustomerAge]"
+                      name="CustomerAge" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[DependentCount]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[DependentCount]"
+                      name="DependentCount" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[EducationKey]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[EducationKey]"
+                      name="EducationKey" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[MaritalKey]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[MaritalKey]"
+                      name="MaritalKey" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[IncomeCategory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[IncomeCategory]"
+                      name="IncomeCategory" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[CategoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[CategoryKey]"
+                      name="CategoryKey" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[MonthsOnBook]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[MonthsOnBook]"
+                      name="MonthsOnBook" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[TotalRelationshipCount]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[TotalRelationshipCount]"
+                      name="TotalRelationshipCount" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[MonthsInactive12Mon]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[MonthsInactive12Mon]"
+                      name="MonthsInactive12Mon" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[ContactsCount12Mon]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[ContactsCount12Mon]"
+                      name="ContactsCount12Mon" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[CreditLimit]"
+                      dataType="r8"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[CreditLimit]"
+                      name="CreditLimit" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[TotalRevolvingBal]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[TotalRevolvingBal]"
+                      name="TotalRevolvingBal" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[AvgOpenToBuy]"
+                      dataType="r8"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[AvgOpenToBuy]"
+                      name="AvgOpenToBuy" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[TotalTransAmt]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[TotalTransAmt]"
+                      name="TotalTransAmt" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[TotalTransCt]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[TotalTransCt]"
+                      name="TotalTransCt" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[AvgUtilization]"
+                      dataType="r8"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[AvgUtilization]"
+                      name="AvgUtilization" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Dimension Client\Populate Dimension Client"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Populate Dimension Client"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimClient]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Dimension Client\Populate Dimension Client.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-NBTGOJS\SQLEXPRESS.CustomerDataHistory]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].Columns[ClientKey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ClientKey"
+                      externalMetadataColumnId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[ClientKey]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[ClientKey]" />
+                    <inputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].Columns[StatusKey]"
+                      cachedDataType="i4"
+                      cachedName="StatusKey"
+                      externalMetadataColumnId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[StatusKey]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[StatusKey]" />
+                    <inputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].Columns[CustomerAge]"
+                      cachedDataType="i4"
+                      cachedName="CustomerAge"
+                      externalMetadataColumnId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[CustomerAge]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[CustomerAge]" />
+                    <inputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].Columns[DependentCount]"
+                      cachedDataType="i4"
+                      cachedName="DependentCount"
+                      externalMetadataColumnId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[DependentCount]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[DependentCount]" />
+                    <inputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].Columns[EducationKey]"
+                      cachedDataType="i4"
+                      cachedName="EducationKey"
+                      externalMetadataColumnId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[EducationKey]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[EducationKey]" />
+                    <inputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].Columns[MaritalKey]"
+                      cachedDataType="i4"
+                      cachedName="MaritalKey"
+                      externalMetadataColumnId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[MaritalKey]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[MaritalKey]" />
+                    <inputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].Columns[IncomeCategory]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="IncomeCategory"
+                      externalMetadataColumnId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[IncomeCategory]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[IncomeCategory]" />
+                    <inputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].Columns[CategoryKey]"
+                      cachedDataType="i4"
+                      cachedName="CategoryKey"
+                      externalMetadataColumnId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[CategoryKey]"
+                      lineageId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output].Columns[CategoryKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[ClientKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ClientKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[StatusKey]"
+                      dataType="i4"
+                      name="StatusKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[EducationKey]"
+                      dataType="i4"
+                      name="EducationKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[MaritalKey]"
+                      dataType="i4"
+                      name="MaritalKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[CategoryKey]"
+                      dataType="i4"
+                      name="CategoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[CustomerAge]"
+                      dataType="i4"
+                      name="CustomerAge" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[DependentCount]"
+                      dataType="i4"
+                      name="DependentCount" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input].ExternalColumns[IncomeCategory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="IncomeCategory" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Dimension Client\Populate Dimension Client.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\Populate Dimension Client.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Dimension Client\Populate Dimension Client.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Dimension Client\Populate Dimension Client.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate Dimension Client.Paths[OLE DB Source Output]"
+              endId="Package\Populate Dimension Client\Populate Dimension Client.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate Dimension Client\CDH Staging.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Populate Dimension Client"
+          TopLeft="76,98" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Populate Dimension Client">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Populate Dimension Client\CDH Staging"
+          TopLeft="28.5,5.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Populate Dimension Client\Populate Dimension Client"
+          TopLeft="0,99" />
+        <EdgeLayout
+          Id="Package\Populate Dimension Client.Paths[OLE DB Source Output]"
+          TopLeft="102.25,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.5"
+              Start="0,0"
+              End="0,44">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Dimension Client\CDH Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Dimension Client\Populate Dimension Client">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
