@@ -15,4 +15,4 @@ From the problem statements above, as a data engineer here are some objective th
 
 # Pipeline Schema
 
-[](docs/pipeline_schema.png)
+![](docs/pipeline_schema.png)
