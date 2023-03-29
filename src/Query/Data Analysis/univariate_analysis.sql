@@ -1,3 +1,15 @@
+-- Check the count of customer by their status and also the percentage
+SELECT 
+    CustomerStatus,
+    COUNT(*) as CustomerCount,
+    COUNT(*) * 100.0 / SUM(COUNT(*)) OVER() as CountPercentage
+FROM dbo.FactTransaction as ft
+INNER JOIN dbo.DimClient as dc 
+	ON ft.ClientKey = dc.ClientKey
+INNER JOIN dbo.DimCustomerStatus as cs 
+	ON dc.StatusKey = cs.StatusKey
+GROUP BY CustomerStatus;
+
 -- Check the card category distribution of the customer
 SELECT 
 	CardCategory,
@@ -12,18 +24,6 @@ INNER JOIN dbo.DimCategory as dc2
 	ON dc2.CategoryKey = dc.CategoryKey
 GROUP BY CardCategory
 ORDER BY CustomerCount DESC;
-
--- Check the count of customer by their status and also the percentage
-SELECT 
-    CustomerStatus,
-    COUNT(*) as CustomerCount,
-    COUNT(*) * 100.0 / SUM(COUNT(*)) OVER() as CountPercentage
-FROM dbo.FactTransaction as ft
-INNER JOIN dbo.DimClient as dc 
-	ON ft.ClientKey = dc.ClientKey
-INNER JOIN dbo.DimCustomerStatus as cs 
-	ON dc.StatusKey = cs.StatusKey
-GROUP BY CustomerStatus;
 
 -- Check the age group distribution of the customer
 SELECT 
