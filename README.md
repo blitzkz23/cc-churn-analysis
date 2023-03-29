@@ -14,3 +14,5 @@ From the problem statements above, as a data engineer here are some objective th
 - Give insight presentation in the form of data visualization in order to make it easy for user to understand the data
 
 # Pipeline Schema
+
+[](docs/pipeline_schema.png)
