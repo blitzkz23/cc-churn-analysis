@@ -16,3 +16,7 @@ From the problem statements above, as a data engineer here are some objective th
 # Pipeline Schema
 
 ![](docs/pipeline_schema.png)
+
+# Project Report
+
+[Report can be seen on this respective link](report/Naufal_Aldy_Pradana_VIX_Final_Project.pptx)

@@ -26,14 +26,14 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-NBTGOJS</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoYLaXHTJEUapzbnGJO6ZQAAAAAACAAAAAAAQZgAAAAEAACAAAAA28yURYGdaLzNV18WIiv2pgyJ1oOqo1buKFUg3qMJymwAAAAAOgAAAAAIAACAAAAByjWK1EHV6pTexEMzcoHu1+6O/8tMTMitfa24FMC+WgJAAAAAreZ82O4pOxhxxVyQ2teEOh3vQIC0TiRgJGiFVK3RsjZUMsmUvw8K2EVdRrBk62VZWO3jWk9ZJ2q0YzAhSKYQrdVEn5FHPJ/36r+phzGz8gmxL3PU2gOkGeeg+KIUxYHZTKpZqsdNV3UhTlREt5RVh8O1+FEG92fSNIxqhLbSGh9p2iF+LOI/W/ThKOEuEiH1AAAAAevOG+i51CO/KucI/28yD2S39CthvUf+Fuc2jm/2iOpiCaDjJ1AJHSihsT9R9/PhgJChjj62oMI1uGvW5RHAoPg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoYLaXHTJEUapzbnGJO6ZQAAAAAACAAAAAAAQZgAAAAEAACAAAADj3ZP4iA3qCKpWp94JNtiklDtwaLx9PuyGgxCFBDuzGAAAAAAOgAAAAAIAACAAAADOVxnuCrc0+SVs8FX8sVaXUinvUi434zuWKIPSA837fZAAAACaPAVlB4iGgjckYxcwFjoKScXHMXmKUeA43V2AWJJOJWiZGKk3pnA5Gov4ZoofEkfsdOi9dfnS/dCITd/AYmupKSRbER2MElbk8lSE8zNQvewPWErxBNYHyjwROTND99lQxV16tJRqVZIXzblJXE++D5S6zh6AYVDzRY9oTk+9vLFk1OGUtZZURrVozWn0ZURAAAAAwDqDK/gCKz4UNQDTiL0Rd7adDZwswboLh7obua1DCYbkxslS8UjMa/Si5BHJrbH1MyaOWf2Y9lIEqsfrk2CVxA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Customer Data History Staging.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Dimension Data Modelling 1.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Dimension Client.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Fact Transaction.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Populate Dimension Client.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Populate Fact Transaction.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
@@ -1356,7 +1356,7 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Dimension Client.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="Populate Dimension Client.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{50041CCC-1D09-465D-8F8B-404BD2AA1B71}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
@@ -1522,7 +1522,7 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Fact Transaction.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="Populate Fact Transaction.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{DB906165-E537-4162-B484-7C3D23749769}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
